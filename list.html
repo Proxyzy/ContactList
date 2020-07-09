@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>List</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+  <div class="header">
+    <h1 class="contactsHeader">Contacts</h1>
+  </div>
+  <div>
+    <ul id="list">
+        <li class="head">
+          <span class="bold listSpan">First Name</span>
+          <span class="bold listSpan">Last Name</span>
+          <span class="bold listSpan">Date of Birth</span>
+          <span class="bold listSpan">Phone Number</span>
+          <span class="bold listSpan longSpan">E-mail</span>
+          <span class="bold listSpan longSpan">Address</span>
+        </li>
+      <ul>
+  </div>
+  <form id="addForm" onsubmit="add(); return false">
+    <H2>Add new contact</H2>
+    <p><label class="label">First Name: </label><input id="name" type="text" required pattern="[A-Za-z]{2,15}"></p>
+    <p><label class="label">Last Name: </label><input id="lastname" type="text" required pattern="[A-Za-z]{2,15}"></p>
+    <p><label class="label">Date of Birth: </label><input id="birth" type="date" required></p>
+    <p><label class="label">Phone Number: </label><input id="phone" type="tel" required pattern = "[0-9]{8,11}"></p>
+    <p><label class="label">E-mail: </label><input id="email" type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></p>
+    <p><label class="label">Address: </label><input id="address" type="text"></p>
+    <p><input type="submit" value="Add New Contact"></p>
+    <p hidden id="error"></p>
+  </form>
+
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form id="editForm" onsubmit="updatePerson(); return false">
+      <H2>Edit Contact</H2>
+      <input type="hidden" id="pId">
+      <p><label class="label">First Name: </label><input id="nameEdit" type="text" required pattern="[A-Za-z]{2,15}"></p>
+      <p><label class="label">Last Name: </label><input id="lastnameEdit" type="text" required pattern="[A-Za-z]{2,15}"></p>
+      <p><label class="label">Date of Birth: </label><input id="birthEdit" type="date" required></p>
+      <p><label class="label">Phone Number: </label><input id="phoneEdit" type="tel" required pattern = "[0-9]{8,11}"></p>
+      <p><label class="label">E-mail: </label><input id="emailEdit" type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></p>
+      <p><label class="label">Address: </label><input id="addressEdit" type="text"></p>
+      <p><input type="submit" value="Edit"></p>
+      <p hidden id="errorEdit">Email is Already Used</p>
+    </form>
+  </div>
+
+</div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
